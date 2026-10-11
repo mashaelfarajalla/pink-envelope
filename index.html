@@ -155,8 +155,9 @@
     .seal img{filter:drop-shadow(0 2px 2px rgba(92,31,46,.18))}
     .guest{position:absolute;left:0;right:0;bottom:17%;z-index:7;text-align:center}
     /* the envelope covers the whole screen here, so the blurred backdrop and corner leaves behind it are
-       never seen: skip them (full-screen blur + blend layers are the heaviest paint on a phone) */
-    #intro::before,#intro::after,.leaf{display:none}
+       never seen: skip them (full-screen blur + blend layers are the heaviest paint on a phone).
+       Only the intro's own leaves: the page behind the invitation keeps its corner leaves. */
+    #intro::before,#intro::after,#intro .leaf{display:none}
     /* the photo is the whole screen, so it shows from its first frame: a fade-in from 0 (or a zoom) keeps
        the browser from counting it as painted and makes the page measure slow; the seal's pulse and the
        initials fading in are the entrance */
